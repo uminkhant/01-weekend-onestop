@@ -102,12 +102,14 @@ public class Main {
 
 					""");
 			int num = sc.nextInt();
-			System.out.println("Do you want more service !");
-			ask = sc.next();
+			
 
 			vehicles = Arrays.copyOf(vehicles, vehicles.length + 1);
 			vehicles[vehicles.length - 1] =  getService("bike", num);
 
+			System.out.println("Do you want more service y/!");
+			ask = sc.next();
+			
 		} while (ask.equals("y"));
 		return vehicles;
 	}

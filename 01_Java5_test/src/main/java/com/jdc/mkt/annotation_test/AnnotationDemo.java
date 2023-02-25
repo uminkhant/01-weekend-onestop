@@ -1,6 +1,7 @@
 package com.jdc.mkt.annotation_test;
 
 import java.lang.annotation.ElementType;
+import java.lang.annotation.Repeatable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
@@ -9,31 +10,32 @@ import java.lang.reflect.Method;
 
 public class AnnotationDemo {
 
-	public static void main(String[] args) throws NoSuchFieldException, SecurityException, NoSuchMethodException {
+	public static void main(String[] args) throws NoSuchFieldException, SecurityException, NoSuchMethodException, ClassNotFoundException {
 
 		Hello h = new Hello();
 		h.useFieldAnno("ss");
-		// h.useMethodAnno("sss");
+		 h.useMethodAnno("sss");
 		h.userFieldAnnoWithArray();
 	}
 
 }
 
 class Hello {
+	
 	@MyAnno("Sandar")
+	@MyAnno("MyoThu")
 	private String name;
 
 	@MyStaff
 	private String staff;
 	
-	@MyAnnos(values = {
+	@MyAnnos(value = {
 		@MyAnno("Soe san"),
 		@MyAnno("pp")
 	})
 	private String names;
 
-	@MyAnno("Soe Thu")
-	void useMethodAnno(String name) throws NoSuchFieldException, SecurityException, NoSuchMethodException {
+	void useMethodAnno(String name) throws  NoSuchMethodException, SecurityException, ClassNotFoundException {
 
 		Method m = Hello.class.getDeclaredMethod("useMethodAnno");
 		MyAnno anno = m.getAnnotation(MyAnno.class);
@@ -80,19 +82,17 @@ class Hello {
 		}
 	}
 
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
-	}
+	
 }
 
+@Repeatable( value = MyAnnos.class)
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ ElementType.FIELD, ElementType.METHOD })
+@Target({ ElementType.FIELD })
 @interface MyAnno {
 
 	String value() default "No Name";
 }
+
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
@@ -101,11 +101,13 @@ class Hello {
 }
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ ElementType.FIELD, ElementType.METHOD })
+@Target( ElementType.FIELD)
 @interface MyAnnos{
 	
-	MyAnno[] values() default {};
+	MyAnno[] value() default {};
 }
+
+
 
 
 
