@@ -20,6 +20,7 @@ class StandardKeyBoard extends KeyBoard{
 }
 
 class Computer{
+	
 	private KeyBoard keyboard;
 	
 	Computer(KeyBoard keyboard){
@@ -27,6 +28,11 @@ class Computer{
 	}
 	void setupCom(String s) {
 		keyboard.useKeyBoard(s);
+	}
+	
+	KeyBoard getKeyboard() {
+		
+		return keyboard ;
 	}
 	
 	
