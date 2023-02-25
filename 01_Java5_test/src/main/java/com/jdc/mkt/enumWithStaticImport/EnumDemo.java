@@ -92,6 +92,11 @@ enum Role implements TestOne{
 	}
 	abstract void show();
 	public void showData() {}
+	
+	
+	
+	
+
 }
 
 

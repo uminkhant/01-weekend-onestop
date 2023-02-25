@@ -15,8 +15,19 @@ public class StaticImportDemo {
 		VarArgsDemo v = new VarArgsDemo();
 		v.setNames("rwer","adsa","asdfad","asd");
 		v.showAllNames();
+		Hello h = new Hello();
+		System.out.println(h);
 		
 		
+	}
+	
+	
+}	
+	class Hello{
+		@Override
+		public String toString() {
+			return "Hello class";
+		}
 	}
 	
 	
@@ -26,8 +37,3 @@ public class StaticImportDemo {
 	
 	
 	
-	
-	
-	
-	
-}
