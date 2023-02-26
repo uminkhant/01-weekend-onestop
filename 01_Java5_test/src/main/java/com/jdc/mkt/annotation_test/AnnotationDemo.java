@@ -36,7 +36,7 @@ class Hello {
 	})
 	private String names;
 
-	@MyMethodAnno
+	@MyMethodAnno(name = "Su Su")
 	void useMethodAnno() throws  NoSuchMethodException, SecurityException, ClassNotFoundException {
 
 		Method m = Hello.class.getDeclaredMethod("useMethodAnno");
