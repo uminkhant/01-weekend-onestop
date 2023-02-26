@@ -13,9 +13,10 @@ public class AnnotationDemo {
 	public static void main(String[] args) throws NoSuchFieldException, SecurityException, NoSuchMethodException, ClassNotFoundException {
 
 		Hello h = new Hello();
-		h.useFieldAnno("ss");
-		 h.useMethodAnno("sss");
-		h.userFieldAnnoWithArray();
+		//h.useFieldAnno("ss");
+		h.useMethodAnno();
+		//h.userFieldAnnoWithArray();
+		
 	}
 
 }
@@ -35,13 +36,14 @@ class Hello {
 	})
 	private String names;
 
-	void useMethodAnno(String name) throws  NoSuchMethodException, SecurityException, ClassNotFoundException {
+	@MyMethodAnno
+	void useMethodAnno() throws  NoSuchMethodException, SecurityException, ClassNotFoundException {
 
 		Method m = Hello.class.getDeclaredMethod("useMethodAnno");
-		MyAnno anno = m.getAnnotation(MyAnno.class);
+		MyMethodAnno anno = m.getAnnotation(MyMethodAnno.class);
 
 		if (null != anno)
-			System.out.println(anno.value());
+			System.out.println(anno.name());
 
 	}
 
@@ -105,6 +107,12 @@ class Hello {
 @interface MyAnnos{
 	
 	MyAnno[] value() default {};
+}
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target( ElementType.METHOD)
+@interface MyMethodAnno{
+	String name() default "no name";
 }
 
 
