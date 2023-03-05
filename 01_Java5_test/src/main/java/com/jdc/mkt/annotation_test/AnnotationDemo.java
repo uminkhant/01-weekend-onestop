@@ -12,7 +12,8 @@ public class AnnotationDemo {
 
 	public static void main(String[] args) throws NoSuchFieldException, SecurityException, NoSuchMethodException, ClassNotFoundException {
 
-		Hello h = new Hello();
+		 Hello h = new Hello();
+			
 		//h.useFieldAnno("ss");
 		h.useMethodAnno();
 		//h.userFieldAnnoWithArray();

@@ -9,8 +9,16 @@ public class Main {
 		arr1.add(23);
 		
 		for(Integer i :arr1.getArray()) {
-			System.out.println(i);
+			System.out.print(i+ " ,");
 		}
 		
+		System.out.println();
+		//System.out.println(arr1.find(87));
+		
+		arr1.remove(5);
+		
+		for(Integer i :arr1.getArray()) {
+			System.out.print(i+ " ,");
+		}
 	}
 }

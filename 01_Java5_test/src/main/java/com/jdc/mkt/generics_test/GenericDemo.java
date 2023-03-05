@@ -12,6 +12,9 @@ public class GenericDemo {
 }
 
 
+ enum Task{
+	
+}
 
 abstract class Human<T>{
 	
