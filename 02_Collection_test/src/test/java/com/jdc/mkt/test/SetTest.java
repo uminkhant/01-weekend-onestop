@@ -71,7 +71,6 @@ public class SetTest {
 		set.add(new Person("Toe Toe", 20));
 		set.add(new Person("Aye", 13));
 
-		System.out.println(set.size());
 		// set.clear();
 		for (Person p : set) {
 			System.out.println("Set : " + p.getName()+"\t"+p.getAge());
@@ -107,9 +106,12 @@ public class SetTest {
 
 }
 
+class A{}
+
 class Person implements Comparable<Person> {
 	private int age;
 	private String name;
+
 
 	Person(String name, int age) {
 		this.age = age;
@@ -126,7 +128,26 @@ class Person implements Comparable<Person> {
 
 	@Override
 	public int compareTo(Person p) {
-		return 0;
+		
+	//	return this.age>p.age? 1:-1;
+		
+		return  this.name.equals(p.getName())? 1: -1;
+	
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

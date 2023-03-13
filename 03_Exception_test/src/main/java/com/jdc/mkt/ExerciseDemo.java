@@ -17,7 +17,7 @@ public class ExerciseDemo {
 		System.out.println("Please type age !");
 		int age = sc.nextInt();
 		checkPerson(name, age);
-		Person p = new Person(name, age);
+		//Person p = new Person(name, age);
 	}
 	
 	static void checkPerson(String name,int age) {
@@ -25,10 +25,10 @@ public class ExerciseDemo {
 			
 			if(name.equals("Admin")) {
 				
-				throw new MyException("Person name Admin");
+				throw new CustomException("Person name Admin");
 			}
 			if(age < 0) {
-				throw new MyException("Person age is lessthan 0 ");
+				throw new CustomException("Person age is lessthan 0 ");
 			}
 			
 			
@@ -41,8 +41,9 @@ public class ExerciseDemo {
 	}
 }
 
-class MyException extends RuntimeException{
-	public MyException(String mess) {
+@SuppressWarnings("serial")
+class CustomException extends RuntimeException{
+	public CustomException(String mess) {
 		super(mess);
 	}
 }

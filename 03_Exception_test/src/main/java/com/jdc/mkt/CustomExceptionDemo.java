@@ -38,6 +38,7 @@ class Data   {
 	
 }
 
+@SuppressWarnings("serial")
 class MyException extends RuntimeException {
 	
 	public MyException(String mess) {
