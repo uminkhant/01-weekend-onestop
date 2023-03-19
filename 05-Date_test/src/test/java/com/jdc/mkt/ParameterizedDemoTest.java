@@ -33,6 +33,7 @@ public class ParameterizedDemoTest {
 	@CsvSource( value = {"W_w","S_s","H_h"},delimiter = '_')
 	void testThree(String s1,String s2) {
 		assertEquals(s1, s2.toUpperCase());
+		
 	}
 	
 	

@@ -26,6 +26,7 @@ public class JuniTest {
 	@BeforeEach
 	void eachBeforeTest() {
 		System.out.println("Before each");
+		
 	}
 	@AfterEach
 	void eachAfterTest() {
