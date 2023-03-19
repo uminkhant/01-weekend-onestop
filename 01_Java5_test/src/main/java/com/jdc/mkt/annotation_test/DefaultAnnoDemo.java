@@ -8,6 +8,7 @@ public class DefaultAnnoDemo {
 	public static void main(String[] args) {
 		
 		testDeprecated();
+		
 		testSaveVarArgs("");
 	}
 	
