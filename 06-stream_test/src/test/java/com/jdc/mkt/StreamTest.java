@@ -1,20 +1,10 @@
 package com.jdc.mkt;
 
-import static org.assertj.core.api.Assertions.catchException;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
@@ -80,30 +70,31 @@ public class StreamTest {
 		System.out.println(res);
 	}
 
-	@Test
+	//@Test
 	@Order(7)
-	void reduceMapTest() throws IOException {
-
+	void reduceMapTest() {
+		//String[] str = { "4,6,3", "4,2,5" };
+		List<String> list = Arrays.asList("2-3", "4-2", "6-6");
 		
-
-		String[] str = { "4,6,3", "4,2,5" };
-		List<String> list = Arrays.asList("2-3-5", "4-2", "6-6");
 		var res = list.stream().map(m -> m.split("-")).flatMap(f -> Arrays.stream(f)).map(i -> Integer.parseInt(i))
 				.reduce(Integer::sum).get();
 		System.out.println(res);
-		var result = Arrays.stream(str).map(m -> m.split(",")).flatMap(f -> Arrays.stream(f)).map(i -> Integer.parseInt(i))
-				.reduce(Integer::sum).orElse(1);
-		System.out.println(res);
+//		var result = Arrays.stream(str).map(m -> m.split(",")).flatMap(f -> Arrays.stream(f)).map(i -> Integer.parseInt(i))
+//				.reduce(Integer::sum).orElse(1);
+		//System.out.println(res);
 	}
 
 	
-	// @Test
+	@Test
 	@Order(8)
 	void collectorTest() {
+		
 		List<String> list = Arrays.asList("2-3", "4-2", "6-6");
-
-		String s = (String) list.stream().collect(Collectors.joining());
-		System.out.println(s);
+		var res = list.stream().map(m -> m.split("-")).flatMap(f -> Arrays.stream(f)).map(i -> Integer.parseInt(i))
+				.reduce(Integer::sum);
+		System.out.println(res);
+//		String s = (String) list.stream().collect(Collectors.joining());
+//		System.out.println(s);
 
 	}
 
