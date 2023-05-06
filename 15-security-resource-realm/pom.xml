@@ -1,11 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.jdc.mkt</groupId>
-  <artifactId>15-security-datasource-realm</artifactId>
-  <version>1.0</version>
-  <packaging>war</packaging>
-  
-  <dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.jdc.mkt</groupId>
+	<artifactId>15-security-resource-realm</artifactId>
+	<version>1.0</version>
+	<packaging>war</packaging>
+	<dependencies>
 		<dependency>
 			<groupId>jakarta.servlet</groupId>
 			<artifactId>jakarta.servlet-api</artifactId>
@@ -28,6 +29,19 @@
 			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
 			<version>3.0.0</version>
 		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.31</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/jakarta.annotation/jakarta.annotation-api -->
+		<dependency>
+			<groupId>jakarta.annotation</groupId>
+			<artifactId>jakarta.annotation-api</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

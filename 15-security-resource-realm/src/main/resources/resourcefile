@@ -1,0 +1,24 @@
+
+
+//server.xml in tomcat
+<Realm className="org.apache.catalina.realm.DataSourceRealm"
+					dataSourceName="jdbc/testdb" localDataSource="true"
+					roleNameCol="role" userCredCol="password" userNameCol="loginId"
+					userRoleTable="user_tbl" userTable="user_tbl" />
+					
+//context.xml in tomcat
+
+ <Resource name="jdbc/testdb" auth="Container" type="javax.sql.DataSource"
+                maxTotal="100" maxIdle="30" maxWaitMillis="10000"
+               username="root" password="admin" driverClassName="com.mysql.cj.jdbc.Driver"
+               url="jdbc:mysql://localhost:3306/test_db"/>
+               
+               
+ //web.xml in app
+ 
+ <resource-ref>
+		<description>DB Connection</description>
+		<res-ref-name>jdbc/testdb</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
