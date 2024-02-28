@@ -2,8 +2,6 @@ package com.jdc.mkt;
 
 import java.util.Scanner;
 
-import javax.management.RuntimeErrorException;
-
 public class CustomExceptionDemo {
 
 	static Data data;

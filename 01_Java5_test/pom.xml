@@ -3,6 +3,9 @@
 	<groupId>com.jdc.mkt</groupId>
 	<artifactId>01_Java5_test</artifactId>
 	<version>1.0</version>
+	<properties>
+		<project.build.sourceEndcoding>UTF-8</project.build.sourceEndcoding>
+	</properties>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
 		<dependency>

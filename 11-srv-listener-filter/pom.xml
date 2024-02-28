@@ -6,6 +6,9 @@
 	<artifactId>11-srv-listener-filter</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
+	<properties>
+		<project.build.sourceEndcoding>UTF-8</project.build.sourceEndcoding>
+	</properties>
 
 	<dependencies>
 		<dependency>

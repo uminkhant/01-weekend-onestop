@@ -2,11 +2,7 @@ package com.jdc.mkt;
 
 import java.io.Closeable;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.Connection;
-
-import javax.management.RuntimeErrorException;
 
 public class ExceptionDemoTwo {
 
